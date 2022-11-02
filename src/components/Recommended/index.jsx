@@ -29,7 +29,6 @@ export const Recommended = () => {
         fetch(`${url}/houses/list`)
             .then((res) => res.json())
             .then((res) => {
-                console.log(res,'recomended');
                 setData(res?.data || []);
             });
     }, []);
