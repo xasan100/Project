@@ -32,7 +32,6 @@ export const Favourite = () => {
     navigate(`/properties/${id}`);
   };
 
-  console.log(data, 'favoi');
   return (
     <React.Fragment>
       <div className="Title">Favourite </div>

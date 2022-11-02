@@ -19,7 +19,7 @@ export const SiginUp = () => {
         });
     };
     const info = () => {
-        message.info("Message click Email Address");
+        message.info("Email Addres Message Yo Click");
     };
     const warning = () => {
         message.info("Error 401");
@@ -36,14 +36,12 @@ export const SiginUp = () => {
 
                 if (res) {
                     navigate("/signin");
-                    info();
                 }
+                info();
             });
         } catch (error) {
-            warning()
         }
     };
-
     return (
 
         <Container>

@@ -4,6 +4,7 @@ import useId from '../hooks/useId';
 import HomePage from '../pages/Home';
 import FavouritePages from '../pages/Favourite';
 import Sigin from '../pages/Sigin';
+import MyproportiesPages from '../pages/Myproportie';
 
 
 // import Properties from '../pages/Properties';
@@ -39,6 +40,7 @@ export const navbar = [
     private: false,
     hidden: true,
   },
+
   {
     id: useId,
     element: <FavouritePages />,
@@ -49,12 +51,13 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <h1>Generic Sign up</h1>,
-    title: 'Sign Up',
-    path: '/signup',
-    private: false,
+    element: <MyproportiesPages />,
+    title: 'Myproporties',
+    path: '/myproporties',
+    private: true,
     hidden: true,
   },
+
 
   {
     id: useId,
