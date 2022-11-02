@@ -1,54 +1,3 @@
-// import React from 'react'
-// import { Container } from './stayle'
-// import { useEffect } from 'react'
-// import { useState } from 'react';
-// import CategoryCurd from '../CategoryCurd/index.jsx';
-// import Slider from "react-slick";
-
-
-// const { REACT_APP_BASE_URL: url } = process.env;
-
-// const settings = {
-//     className: "center",
-//     centerMode: true,
-//     infinite: true,
-//     centerPadding: "60px",
-//     slidesToShow: 4,
-//     speed: 500
-// };
-// export const Category = () => {
-
-
-
-//     const [data, setData] = useState([])
-
-//         ;
-
-//     useEffect(() => {
-//         fetch(`${url}/categories/list`)
-//             .then((res) => res.json())
-//             .then((res) => {
-//                 (res);
-//                 setData(res?.data || []);
-//             })
-//     }, []);
-//     return (
-//         <Container>
-//             <Slider {...settings}>
-
-//                 {data.map((value ) => {
-//                     return <CategoryCurd />
-//                 })}
-//             </Slider>
-
-
-//         </Container>
-//     )
-// }
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { Container, Content } from "./stayle.js";
 import Slider from "react-slick";
@@ -80,6 +29,7 @@ export const Recommended = () => {
         fetch(`${url}/houses/list`)
             .then((res) => res.json())
             .then((res) => {
+                console.log(res,'recomended');
                 setData(res?.data || []);
             });
     }, []);

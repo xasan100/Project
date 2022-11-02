@@ -99,6 +99,7 @@ export const HouseCard = ({ data = {}, gap, onClick }) => {
         })
             .then((res) => res.json())
             .then((res) => {
+                console.log(res,'resss');
                 if (favorite) {
                     res?.success && message.warning('Succesfully  disliked')
                 }
