@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400;1,600;1,700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* color */
+  --colorPrimary: #0d263b;
+  --colorSecondary: #696969;
+  /* background */
+  --backgroundPrimary: #0061df;
+  /* padding */
+  --padding: 0 130px;
+  /* width */
+  --width: 1440px
+}
+
+.Title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: #0D263B;
+  text-align:
+    center;
+}
+
+
+
+.SubTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0D263B;
+  cursor: pointer;
+  width: 100%;
+
+}
+
+.info {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #696969;
+  width: 70%;
+}
+
+.inline {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+  font-size: 25px !important;
+}
+
+.ant-carousel .slick-dots {
+  width: inherit;
+}
+
+.nulla {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+
+}
+.infoo {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #696969;
+}
+.editable-row .ant-form-item-explain {
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
+}
