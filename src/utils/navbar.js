@@ -4,8 +4,7 @@ import useId from '../hooks/useId';
 import HomePage from '../pages/Home';
 import FavouritePages from '../pages/Favourite';
 import Sigin from '../pages/Sigin';
-import MyproportiesPages from '../pages/Myproportie';
-
+import MyProfilePages from '../pages/Myprofile';
 
 // import Properties from '../pages/Properties';
 export const Properties = React.lazy(() => import('../pages/Properties'))
@@ -51,9 +50,9 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <MyproportiesPages />,
-    title: 'Myproporties',
-    path: '/myproporties',
+    element: <MyProfilePages />,
+    title: 'MyProfile',
+    path: '/myprofile',
     private: true,
     hidden: true,
   },
