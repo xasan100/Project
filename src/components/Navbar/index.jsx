@@ -34,7 +34,6 @@ export const Home = () => {
   }
   const onClickProporties = ({ target: {  dataset: { name } } }) => {
     if (name == 'myproporties') {
-      localStorage.removeItem('token')
       navigate(`/myproporties`)
 
     } else {
