@@ -8,7 +8,7 @@ margin: 0 auto ;
 justify-content: space-around ;
 padding: var(--padding) ;
 gap: 50px 20px ;
- margin-top: 50px;
-
+ margin-top:50px;
+ display: flex;
 `;
 
