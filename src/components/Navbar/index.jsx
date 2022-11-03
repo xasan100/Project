@@ -6,7 +6,7 @@ import { navbar } from '../../utils/navbar';
 import Filter from '../Filter';
 import Footer from '../Footer/index.jsx';
 import { Button } from '../Generic/Button';
-import Myproporties from '../Myproporties/index';
+import Myproporties from '../Myprofile/index';
 import { Container, Link, Logo, Main, Menu, Section, Wrapper } from './style';
 
 
@@ -32,19 +32,12 @@ export const Home = () => {
       navigate(`${name}`)
     }
   }
-  const onClickProporties = ({ target: {  dataset: { name } } }) => {
-    if (name == 'myproporties') {
-      navigate(`/myproporties`)
 
-    } else {
-      navigate(`${name}`)
-    }
-  }
 
   const menu = (
     <Menu >
-      <Menu.Item data-name="profile" onClick={onClickProfile} > My Profile</Menu.Item>
-      <Menu.Item data-name="myproporties" onClick={onClickProporties} > My Proporties</Menu.Item>
+      <Menu.Item data-name="myprofile" onClick={onClickProfile} > My Profile</Menu.Item>
+      <Menu.Item data-name="myproporties" onClick={onClickProfile} > My Proporties</Menu.Item>
       <Menu.Item data-name="favourite" onClick={onClickProfile} > Favourites</Menu.Item>
       <Menu.Item data-name="logout" onClick={onClickProfile} > Log out</Menu.Item>
     </Menu>

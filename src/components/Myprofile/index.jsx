@@ -7,7 +7,7 @@ import { Table } from 'antd';
 const { REACT_APP_BASE_URL } = process.env;
 
 
-export const Favourite = () => {
+export const Myprofile = () => {
   const { search } = useLocation();
   const navigate = useNavigate()
   const [, dispatch] = useContext(PropertiesContext)
@@ -46,4 +46,4 @@ export const Favourite = () => {
   )
 };
 
-export default Favourite;
+export default Myprofile;
