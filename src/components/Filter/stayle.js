@@ -1,3 +1,5 @@
+
+
 import styled from 'styled-components';
 import { ReactComponent as houses } from "../../assets/icons/houses.svg"
 import { ReactComponent as filter } from '../../assets/icons/setting.svg';
@@ -14,12 +16,10 @@ const Container = styled.div`
  left: 140px ;
  z-index: 1 ;
  top: 85px ;
-
 }
     max-width: 1440px;
     width: 100%;
     margin: 0 auto ;
-
 `;
 
 export const Icons = styled.div``;
@@ -48,7 +48,6 @@ const Section = styled.div`
   justify-content: start;
   gap: 20px;
   margin-bottom: 20px;
-
 `;
 
 const SelectAnt = styled(Select)`
@@ -62,7 +61,6 @@ max-width: 150px  ;
     align-items: center ;
   }
 }
-
 `
 
 export { Container, MenuWrapper, Section, SelectAnt };
