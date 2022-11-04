@@ -1,47 +1,72 @@
-import React, { useContext, useState } from 'react';
-import { useQuery } from 'react-query';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { PropertiesContext } from '../../context/properties/index.jsx';
-import Columns from './mock.js';
-import { Table } from 'antd';
-const { REACT_APP_BASE_URL } = process.env;
-
+import { AntTabble, Container, Icons } from './style';
+const { REACT_APP_BASE_URL: url } = process.env;
 
 export const Myprofile = () => {
+  const [data, setData] = useState([])
   const { search } = useLocation();
   const navigate = useNavigate()
-  const [, dispatch] = useContext(PropertiesContext)
 
+  useEffect(() => {
+    fetch(`${url}/houses/list${search}`)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res,'daedfs');
+        setData(res?.data || []);
+        // console.log(res,'like');
+      })
+  }, [search]);
 
+  const onSelect = (id) => {
+    navigate(`/properties/${id}`);
+  };
 
-  const { refetch, data } = useQuery([search], async () => {
-    const res = await fetch(`${REACT_APP_BASE_URL}/houses/getAll/favouriteList`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    });
-    return await res.json();
+const columns =[
+  {
+    title:'Listing Title',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+    with: 150,
+  },
+  {
+    title:'Year Build',
+     render: (data )=>  <span>{ data.houseDetails.yearBuilt}</span>,
+    key: 'houseDetails.yearBuilt',
+  },
+  {
+    title:'Email',
+    render: (data )=>  <span>{ data.user.email}</span>,
+    key: 'email',
+  }, 
+  {
+    title:'Price',
+    dataIndex: 'price',
+    key: 'Price',
+  },
 
+  {
+    title:'Action',
+    key: 'email',
+    render:data =>{
+      return (
+      <div>
+        <Icons.Edit/>
+      <Icons.Delete/>
+      </div>
+      )
+    }
+  },
 
-  }, {
-  
-  });
-
-
+]
 
   return (
     <React.Fragment>
-      <div className="Title">Favourite </div>
-      <p className="info nulla " >Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</p>
-  <> 
-  <Table 
-    columns={ Columns}
-    scroll={{
-      x: 1500,
-      y: 300,
-    }}
-  />  
-  </>
+      <div className="Title">Properties </div>
+      <Container>
+          <AntTabble dataSource={data} columns={columns} />
+      </Container>
     </React.Fragment>
   )
 };

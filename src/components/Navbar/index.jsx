@@ -37,7 +37,6 @@ export const Home = () => {
   const menu = (
     <Menu >
       <Menu.Item data-name="myprofile" onClick={onClickProfile} > My Profile</Menu.Item>
-      <Menu.Item data-name="myproporties" onClick={onClickProfile} > My Proporties</Menu.Item>
       <Menu.Item data-name="favourite" onClick={onClickProfile} > Favourites</Menu.Item>
       <Menu.Item data-name="logout" onClick={onClickProfile} > Log out</Menu.Item>
     </Menu>
