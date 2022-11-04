@@ -25,14 +25,21 @@ border: 1px solid #f0f0f0;
  height: 16px;
  margin: 16px;
  cursor: pointer;
-
-
  `
  Icons.Delete=styled(Delete)`
   width:16px;
   height: 16px;
   margin:16px;
-color: red;
-cursor: pointer;
+  color: red;
+  cursor: pointer;
+ `
 
+ export const User=styled.div`
+ display: flex ;
+ flex-direction:${({flex}) => (flex ? "column":"row")};
+ `
+
+ export  const Imgs=styled.img`
+    width: 113px;
+    height: 113px;
  `
