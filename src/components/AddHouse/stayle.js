@@ -21,13 +21,13 @@ const MenuWrapper = styled.div`
 `;
 const Section = styled.div`
   display: flex;
-  flex-direction: ${({flex} ) => flex ? " column":'row'};
-  justify-content: start;
-  gap: 20px;
-  margin-bottom: 20px;
-  
+  justify-content: ${({flex} ) => flex ? " space-around":'start'};
 
-`;
+flex-direction: ${({gap} ) => gap ? 'column ':'row'};
+
+  margin-bottom: 20px;
+  gap: 20px;
+`; 
 
 
 const SelectAnt = styled(Select)`

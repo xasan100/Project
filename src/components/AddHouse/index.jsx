@@ -6,6 +6,7 @@ import { uzeReplace } from '../../hooks/useReplace';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../Generic/Button';
 import { Form, useFormik } from 'formik';
+import { Checkbox } from 'antd';
 const { REACT_APP_BASE_URL: url } = process.env;
 
 export const AddHouse = () => {
@@ -76,13 +77,31 @@ console.log(values);
         <Input value={formik.values.sele_price}  name='sele_price' onChange={formik.handleChange} placeholder='Sale price' />
       </Section>
     
-    <Section>
     <h1 className='SubTitle'>Addinational</h1>
-    <Section flex> 1</Section>
-    <Section>
+<Section flex>
+<Section gap>
+  <Checkbox> Bus Stop</Checkbox>
+  <Checkbox> Garden</Checkbox>
+  <Checkbox>Mark</Checkbox>
+  <Checkbox>Park</Checkbox>
+  <Checkbox>Parking</Checkbox>
+</Section>
+<Section gap>
+  <Checkbox> School</Checkbox>
+  <Checkbox> Statium</Checkbox>
+  <Checkbox>Subway</Checkbox>
+  <Checkbox>Super Market</Checkbox>
+  <Checkbox>TV</Checkbox>
+</Section>
+<Section gap>
+  <Checkbox> Air Condition</Checkbox>
+  <Checkbox> Courtyard</Checkbox>
+  <Checkbox>Furnitue</Checkbox>
+  <Checkbox>Gas Stove</Checkbox>
+  <Checkbox>Internet</Checkbox>
+</Section>
+ </Section>
 
-    </Section>
-    </Section>     
       <div>
        <Button>Save</Button>
        </div>
