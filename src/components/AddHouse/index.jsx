@@ -31,26 +31,12 @@ useEffect(() => {
 }, [location?.search, data])
 
 
-const onChangeCategory = (category_id) => {
-  // navigate(`/properties${uzeReplace('category_id', category_id)}`);
-};
-
-
-const onChange = ({ target: { name, value } }) => {
-  // Navigate(`${location?.pathname}${uzeReplace(name, value)}`); 
-  navigate(`${location?.pathname}${uzeReplace(name, value)}`);
-};
-const onChangeSort = (sort) => {
-  // navigate(`/properties${uzeReplace('sort', sort)}`);
-};
 
 
 const formik = useFormik({
-  initialValues: {
-    email: '',
-  },
+  initialValues: {},
   onSubmit: values => {
-    alert(JSON.stringify(values, null, 2));
+console.log(values);
   },
 });
 
@@ -60,22 +46,22 @@ const formik = useFormik({
      <MenuWrapper >
       <h1 className='SubTitle'> Address</h1>
       <Section>
-        <Input onChange={onChange}  name='country' width={'350'} pl={'10'} placeholder='Country' />
-        <Input onChange={onChange} name='region' width={'350'} placeholder='Region'  />
-        <Input onChange={onChange}  name='city' width={'350'} placeholder='City' />
-        <Input onChange={onChange}  name='city' width={'350'} placeholder='Addrees'  />
+        <Input          onChange={formik.handleChange}  value={formik.values.country}  name='country' width={'350'} pl={'10'} placeholder='Country' />
+        <Input          onChange={formik.handleChange} value={formik.values.region}  name='region' width={'350'} placeholder='Region'  />
+        <Input          onChange={formik.handleChange}  value={formik.values.city}  name='city' width={'350'} placeholder='City' />
+        <Input          onChange={formik.handleChange}  value={formik.values.address}  name='address' width={'350'} placeholder='Addrees'  />
 
       </Section>
       <h1 className='SubTitle'>Apartment info</h1>
       <Section>
 
-        <Input name='area' onChange={onChange} placeholder=' Area' />
-        <Input name='bath' onChange={onChange} placeholder='Bath' />
-        <Input name='beds' onChange={onChange} placeholder='Beds' />
-        <Input name='garage' onChange={onChange} placeholder='Garages' />
-        <Input name='yearBuilt' onChange={onChange} placeholder='YearBuilt' />
-        <Input onChange={onChange} name='zip_code' width={'200'} placeholder='Zip code' />
-        <SelectAnt value={value} onChange={onChangeCategory} name="" id="">
+        <Input   value={formik.values.area}  name='area'  onChange={formik.handleChange} placeholder=' Area' />
+        <Input   value={formik.values.bath}  name='bath' onChange={formik.handleChange} placeholder='Bath' />
+        <Input   value={formik.values.beds} name='beds' onChange={formik.handleChange} placeholder='Beds' />
+        <Input   value={formik.values.garage} name='garage' onChange={formik.handleChange} placeholder='Garages' />
+        <Input   value={formik.values.yearBuilt} name='yearBuilt' onChange={formik.handleChange} placeholder='YearBuilt' />
+        <Input   value={formik.values.zip_code} name='zip_code'   onChange={formik.handleChange}  width={'200'} placeholder='Zip code' />
+        <SelectAnt value={value}  name="" id="">
           <SelectAnt.Option value={''}>Select Sort</SelectAnt.Option>
 
           {data.map((value) => {
@@ -86,12 +72,20 @@ const formik = useFormik({
       </Section>
       <h1 className='SubTitle'>Price</h1>
       <Section >
-        <Input name='price' onChange={onChange} placeholder='Price' />
-        <Input name='sele_price' onChange={onChange} placeholder='Sale price' />
+        <Input value={formik.values.price}  name='price' onChange={formik.handleChange} placeholder='Price' />
+        <Input value={formik.values.sele_price}  name='sele_price' onChange={formik.handleChange} placeholder='Sale price' />
       </Section>
-      <div style={{marginLeft:'auto'}}>
-        <Button>Save</Button>
-      </div>
+    
+    <Section>
+    <h1 className='SubTitle'>Addinational</h1>
+    <Section flex> 1</Section>
+    <Section>
+
+    </Section>
+    </Section>     
+      <div>
+       <Button>Save</Button>
+       </div>
     </MenuWrapper>
     </form>
  </Wrapper>
