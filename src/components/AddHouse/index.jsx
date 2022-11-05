@@ -4,6 +4,8 @@ import Input from '../Generic/Input';
 import { useSearch } from '../../hooks/useSearch';
 import { uzeReplace } from '../../hooks/useReplace';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Button from '../Generic/Button';
+import { Form, useFormik } from 'formik';
 const { REACT_APP_BASE_URL: url } = process.env;
 
 export const AddHouse = () => {
@@ -19,6 +21,7 @@ useEffect(() => {
       setData(res?.data || []);
     });
 }, []);
+
 
 useEffect(() => {
   let [d] = data?.filter((ctg) => ctg.id === Number(query.get('category_id')))
@@ -41,8 +44,19 @@ const onChangeSort = (sort) => {
   // navigate(`/properties${uzeReplace('sort', sort)}`);
 };
 
+
+const formik = useFormik({
+  initialValues: {
+    email: '',
+  },
+  onSubmit: values => {
+    alert(JSON.stringify(values, null, 2));
+  },
+});
+
   return (
  <Wrapper>
+  <form onSubmit={formik.handleSubmit} >
      <MenuWrapper >
       <h1 className='SubTitle'> Address</h1>
       <Section>
@@ -75,7 +89,11 @@ const onChangeSort = (sort) => {
         <Input name='price' onChange={onChange} placeholder='Price' />
         <Input name='sele_price' onChange={onChange} placeholder='Sale price' />
       </Section>
+      <div style={{marginLeft:'auto'}}>
+        <Button>Save</Button>
+      </div>
     </MenuWrapper>
+    </form>
  </Wrapper>
   )
 }
