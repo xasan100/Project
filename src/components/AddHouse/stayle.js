@@ -46,7 +46,9 @@ width:16px ;
 height: 16px ;
 cursor: pointer;
 :hover{
-  color: red;
+ & path {
+  fill: red;
+ }
 }
 `
 
