@@ -1,6 +1,6 @@
 import { Select } from 'antd';
 import styled from 'styled-components';
-
+import { ReactComponent as Delete }   from "../../assets/icons/delete.svg"
 
 
 export const Wrapper=styled.div`
@@ -21,9 +21,8 @@ const MenuWrapper = styled.div`
 `;
 const Section = styled.div`
   display: flex;
-  justify-content: ${({flex} ) => flex ? " space-around":'start'};
-
-flex-direction: ${({gap} ) => gap ? 'column ':'row'};
+  flex-direction: ${({ flex }) => (flex ? "column" : "row")};
+  justify-content: ${({ gap }) => (gap ? "space-around" : "start")};
 
   margin-bottom: 20px;
   gap: 20px;
@@ -42,4 +41,21 @@ max-width: 150px  ;
   }
 }
 `
-export { MenuWrapper, Section,SelectAnt };
+const  IconDelete=styled(Delete)`
+width:16px ;
+height: 16px ;
+cursor: pointer;
+:hover{
+  color: red;
+}
+`
+
+export { MenuWrapper, Section,SelectAnt,IconDelete };
+
+
+
+
+// gcfhvjkl;jhgf
+
+// gcfhvjkl;jhgf
+
