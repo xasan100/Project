@@ -54,7 +54,7 @@ useEffect(() => {
     .then((res) => {
       setData(res?.data || []);
     });
-}, []);
+}, [  request]);
 
 const onChangeCategory = (category_id) => {
   navigate(`/properties${uzeReplace('category_id', category_id)}`);
@@ -77,7 +77,10 @@ const formik = useFormik({
           categoryId: 1,
           name: "xasan",
           attachments: imgs,
+          latitude: 0,
+          longitude: 0
         },
+        
       }).then((res) => {
         if (res?.success) navigate("/myprofile");
       });
@@ -91,7 +94,7 @@ const addImg = () => {
     ]);
     setImg("");
   }
-  console.log(value,imgs,'sdwe');
+  console.log(value,imgs,'ruqi');
 };
   return (
  <Wrapper>
@@ -108,13 +111,13 @@ const addImg = () => {
       <h1 className='SubTitle'>Apartment info</h1>
       <Section>
 
-        <Input   value={formik.values.area}  name='area'  onChange={formik.handleChange} placeholder=' Area' />
-        <Input   value={formik.values.bath}  name='bath' onChange={formik.handleChange} placeholder='Bath' />
-        <Input   value={formik.values.beds} name='beds' onChange={formik.handleChange} placeholder='Beds' />
-        <Input   value={formik.values.garage} name='garage' onChange={formik.handleChange} placeholder='Garages' />
-        <Input   value={formik.values.yearBuilt} name='yearBuilt' onChange={formik.handleChange} placeholder='YearBuilt' />
-        <Input   value={formik.values.zip_code} name='zip_code'   onChange={formik.handleChange}  width={'200'} placeholder='Zip code' />
-        <SelectAnt value={value} onChange={onChangeCategory}   name="" id="">
+        <Input   value={formik.values.area}  name='houseDetails.area'  onChange={formik.handleChange} placeholder=' Area' />
+        <Input   value={formik.values.bath}  name='houseDetails.bath' onChange={formik.handleChange} placeholder='Bath' />
+        <Input   value={formik.values.beds} name='houseDetails.beds' onChange={formik.handleChange} placeholder='Beds' />
+        <Input   value={formik.values.garage} name='houseDetails.garage' onChange={formik.handleChange} placeholder='Garages' />
+        <Input   value={formik.values.yearBuilt} name='houseDetails.yearBuilt' onChange={formik.handleChange} placeholder='YearBuilt' />
+        <Input   value={formik.values.zip_code} name='houseDetails.room'   onChange={formik.handleChange}  width={'200'} placeholder='Rooms' />
+        <SelectAnt defaultValue={'Select'} value={formik.values.category} onChange={onChangeCategory}   name="" id="">
           <SelectAnt.Option value={''}>Select Sort</SelectAnt.Option>
 
           {data.map((value) => {
@@ -154,31 +157,35 @@ const addImg = () => {
        ) })}
     </Section>
 <Section> 
-    <TextArea value={formik.values.description} name='description' placeholder='Description 😜' rows={6}></TextArea>
+    <TextArea value={formik.values.description} placeholder='Description 😜' rows={6}></TextArea>
 </Section>
     <h1 className='SubTitle'>Addinational</h1>
 <Section flex>
 <Section gap>
-  <Checkbox> Bus Stop</Checkbox>
-  <Checkbox> Garden</Checkbox>
-  <Checkbox>Mark</Checkbox>
-  <Checkbox>Park</Checkbox>
-  <Checkbox>Parking</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='componentsDto.busStop' > Bus Stop</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='componentsDto.garden' > Garden</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='componentsDto.market' >Mark</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='componentsDto.park' >Park</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='componentsDto.parking' >Parking</Checkbox>
 </Section>
+
+
 <Section gap>
-  <Checkbox> School</Checkbox>
-  <Checkbox> Statium</Checkbox>
-  <Checkbox>Subway</Checkbox>
-  <Checkbox>Super Market</Checkbox>
-  <Checkbox>TV</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='homeAmenitiesDto.school'> School</Checkbox  >
+  <Checkbox onChange={formik.handleChange} name='homeAmenitiesDto.statium'> Statium</Checkbox  >
+  <Checkbox onChange={formik.handleChange} name='homeAmenitiesDto.subway'> Subway</Checkbox  >
+  <Checkbox onChange={formik.handleChange} name='homeAmenitiesDto.superMarket'> Super Market</Checkbox  >
+  <Checkbox onChange={formik.handleChange} name='homeAmenitiesDto.tv'>TV</Checkbox>
 </Section>
+
 <Section gap>
-  <Checkbox> Air Condition</Checkbox>
-  <Checkbox> Courtyard</Checkbox>
-  <Checkbox>Furnitue</Checkbox>
-  <Checkbox>Gas Stove</Checkbox>
-  <Checkbox>Internet</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='houseDetails.air' > Air Condition</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='houseDetails.courtyard' > Courtyard</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='houseDetails.furnitue' >Furnitue</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='houseDetails.gas' >Gas Stove</Checkbox>
+  <Checkbox onChange={formik.handleChange} name='houseDetails.internet' >Internet</Checkbox>
 </Section>
+
  </Section>
 
       <div>
