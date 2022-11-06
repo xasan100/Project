@@ -53,11 +53,16 @@ align-items:  center;
 width:  120px;
 width: ${getWidth};
 cursor: pointer;
+opacity: ${ ({ disabled }) => disabled ? ` 0.7` : '1' };
+cursor: ${ ({ disabled }) => disabled ? 'not-allowed' : 'ponter' };
+
 height: ${ ({ height }) => height ? `${height} px` : '44px' };
+
 ${ getType }
 :active {
     color: ${ ({ active }) => active ? 'yellow' : "" };
     border: ${ ({ boractive }) => boractive ? '1px solid yellow' : "" };
+    opacity:0.7;
 }
 `
 
