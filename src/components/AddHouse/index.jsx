@@ -45,7 +45,7 @@ useEffect(() => {
       setInitail({ ...res?.data });
 
     });
-}, [id, request]);
+}, []);
 
 // category
 useEffect(() => {
@@ -54,7 +54,7 @@ useEffect(() => {
     .then((res) => {
       setData(res?.data || []);
     });
-}, [  request]);
+}, [  ]);
 
 const onChangeCategory = (category_id) => {
   navigate(`/properties${uzeReplace('category_id', category_id)}`);
@@ -82,8 +82,10 @@ const formik = useFormik({
         },
         
       }).then((res) => {
+        console.log(res,'ruqi');
         if (res?.success) navigate("/myprofile");
       });
+
     },
 });
 const addImg = () => {
@@ -94,11 +96,10 @@ const addImg = () => {
     ]);
     setImg("");
   }
-  console.log(value,imgs,'ruqi');
 };
   return (
  <Wrapper>
-  <form onSubmit={formik.handleSubmit} >
+  <form onSubmit={()=>formik.handleSubmit} >
      <MenuWrapper >
       <h1 className='SubTitle'> Address</h1>
       <Section>
@@ -111,13 +112,13 @@ const addImg = () => {
       <h1 className='SubTitle'>Apartment info</h1>
       <Section>
 
-        <Input   value={formik.values.area}  name='houseDetails.area'  onChange={formik.handleChange} placeholder=' Area' />
-        <Input   value={formik.values.bath}  name='houseDetails.bath' onChange={formik.handleChange} placeholder='Bath' />
-        <Input   value={formik.values.beds} name='houseDetails.beds' onChange={formik.handleChange} placeholder='Beds' />
-        <Input   value={formik.values.garage} name='houseDetails.garage' onChange={formik.handleChange} placeholder='Garages' />
-        <Input   value={formik.values.yearBuilt} name='houseDetails.yearBuilt' onChange={formik.handleChange} placeholder='YearBuilt' />
-        <Input   value={formik.values.zip_code} name='houseDetails.room'   onChange={formik.handleChange}  width={'200'} placeholder='Rooms' />
-        <SelectAnt defaultValue={'Select'} value={formik.values.category} onChange={onChangeCategory}   name="" id="">
+        <Input type='number'   value={formik.values.area}  name='houseDetails.area'  onChange={formik.handleChange} placeholder=' Area' />
+        <Input type='number'   value={formik.values.bath}  name='houseDetails.bath' onChange={formik.handleChange} placeholder='Bath' />
+        <Input type='number'   value={formik.values.beds} name='houseDetails.beds' onChange={formik.handleChange} placeholder='Beds' />
+        <Input type='number'   value={formik.values.garage} name='houseDetails.garage' onChange={formik.handleChange} placeholder='Garages' />
+        <Input type='number'   value={formik.values.yearBuilt} name='houseDetails.yearBuilt' onChange={formik.handleChange} placeholder='YearBuilt' />
+        <Input type='number'   value={formik.values.zip_code} name='houseDetails.room'   onChange={formik.handleChange}  width={'200'} placeholder='Rooms' />
+        <SelectAnt defaultValue={'Select'} value={formik.values.categoryId} onChange={onChangeCategory}   name="" id="">
           <SelectAnt.Option value={''}>Select Sort</SelectAnt.Option>
 
           {data.map((value) => {
@@ -130,7 +131,7 @@ const addImg = () => {
       <Section > 
       <Input value={formik.values.name}  name='name' onChange={formik.handleChange} placeholder='Name'/>
       <Input value={formik.values.zipcode}  name='zipcode' onChange={formik.handleChange} placeholder='Zip Code'/>
-      <Input value={formik.values.price}  name='price' onChange={formik.handleChange} placeholder='Price'/>
+      <Input type='number' value={formik.values.price}  name='price' onChange={formik.handleChange} placeholder='Price'/>
       <Input value={formik.values.sele_price}  name='sele_price' onChange={formik.handleChange} placeholder='Sale price' />
       </Section>
  <Section>
@@ -197,3 +198,4 @@ const addImg = () => {
   )
 }
 export default AddHouse
+
