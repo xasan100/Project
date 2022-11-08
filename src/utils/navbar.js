@@ -6,7 +6,6 @@ import FavouritePages from '../pages/Favourite';
 import Sigin from '../pages/Sigin';
 import MyProfilePages from '../pages/Myprofile';
 import AddHousePages from '../pages/AddHouse';
-import EditHouse from '../components/EditHouse';
 
 // import Properties from '../pages/Properties';
 export const Properties = React.lazy(() => import('../pages/Properties'))
@@ -60,9 +59,9 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <EditHouse />,
-    title: 'EditHouse',
-    path: '/myprofile/edithouse',
+    element: < AddHousePages />,
+    title: 'Add House',
+    path: '/myprofile/edithouse:id',
     private: true,
     hidden: true,
   },

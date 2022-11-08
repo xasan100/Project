@@ -248,7 +248,6 @@ export const AddNewHouse = () => {
 
   const formik = useFormik({
     initialValues: initial,
-    // initialValues: {},
     enableReinitialize: true,
 
     onSubmit: (values) => {
@@ -259,7 +258,7 @@ export const AddNewHouse = () => {
         body: {
           ...values,
           categoryId: 1,
-          name: "xasan   ",
+          name: "",
           attachments: imgs,
         },
       }).then((res) => {

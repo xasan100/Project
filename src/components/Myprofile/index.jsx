@@ -163,7 +163,7 @@ export const MyProfile = () => {
             <Icons.Edit
               onClick={(event) => {
                 event.stopPropagation();
-                navigate(`/myprofile/edithouse`);
+                navigate(`/myprofile/edithouse${data?.id}`);
               }}
             />
             <Icons.Delete
