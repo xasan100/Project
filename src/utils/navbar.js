@@ -6,6 +6,7 @@ import FavouritePages from '../pages/Favourite';
 import Sigin from '../pages/Sigin';
 import MyProfilePages from '../pages/Myprofile';
 import AddHousePages from '../pages/AddHouse';
+import EditHouse from '../components/EditHouse';
 
 // import Properties from '../pages/Properties';
 export const Properties = React.lazy(() => import('../pages/Properties'))
@@ -54,6 +55,14 @@ export const navbar = [
     element: <AddHousePages />,
     title: 'Add House',
     path: '/myprofile/newhouse',
+    private: true,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <EditHouse />,
+    title: 'EditHouse',
+    path: '/myprofile/edithouse',
     private: true,
     hidden: true,
   },
