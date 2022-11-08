@@ -149,9 +149,9 @@ export const MyProfile = () => {
     {
       title: "Price",
       key: "price",
-      render: (data) => <span> $ {data.price}</span>,
+      render: (data) => <p> $ {data.price}</p>,
 
-      width: 150,
+      width: 250,
     },
     {
       title: "Action",
@@ -163,7 +163,7 @@ export const MyProfile = () => {
             <Icons.Edit
               onClick={(event) => {
                 event.stopPropagation();
-                navigate(`/myprofile/edithouse/${data?.id}`);
+                navigate(`/myprofile/edithouse`);
               }}
             />
             <Icons.Delete
@@ -182,7 +182,7 @@ export const MyProfile = () => {
     request({ url: `/houses/${id}`, token: true, method: "DELETE" }).then(
       (res) => {
         if (res?.success) {
-          message.info("Successfully deleted");
+          message.info("Delete 🤨");
           refetch();
         }
       }
