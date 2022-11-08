@@ -13,8 +13,6 @@ display: flex;
 flex-direction: column ;
 justify-content: space-between ;
 flex: ${({ flex }) => flex} ;
-margin-left: 20px  ;
-padding: 24px  ;
 ~.User{
   border: 1px solid  red; 
   background: #FFFFFF;
@@ -39,6 +37,7 @@ const Wrapper = styled.div`
 display: flex;
 padding: var(--padding) ;
 max-width: var(--width) ;
+gap: 30px 50px;
 `
 
 const Content = styled.div`
@@ -167,7 +166,7 @@ border-radius: 50%   ;
 margin-right: 20px ;
 `
 const Box = styled.div`
-
+margin-top: 30px ;
 `
 
 export { Container, Content, Icons, Section, Details, Control, Box, BoxName, Description, TextLarge, Wrapper, User };
