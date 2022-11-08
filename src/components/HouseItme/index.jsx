@@ -28,6 +28,7 @@ export const HouseItme = () => {
         <Box>
             <Wrapper>
                 <Container flex={3}>
+<div><h1>hello</h1></div>
                     <Section>
                         <Content>
                             <div className="Title"> {data?.name}</div>
