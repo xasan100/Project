@@ -6,6 +6,7 @@ import { Input, Button } from "../Generic";
 import Recent from "../Recent";
 import nouser from "../../assets/img/nouser.jpg";
 import {
+  Blur,
   Container,
   Content,
   Description,
@@ -36,18 +37,22 @@ export const HouseItem = () => {
         setData(res?.data);
         window.scrollTo(0, 0);
       });
-  }, [params?.id]);
-  console.log(data?.attachments,'ruqi');
-
+  }, []);
+console.log(data,'fdsdsf');
   return (
     <Hero>
           <ImgContainer>
-<div>          <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/></div>
+<div>     <ImgContainer.SubImg  src= { data?.attachments && data?.attachments[0]?.imgPath ||'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'}  /></div>
         <ImgCoontainer>
-        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
-        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
-        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
-        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
+        {data?.attachments&&data?.attachments.slice(1,5).map((value,index)=>{
+          return (  data?.attachments.length>5 && index===3 ?
+        <Blur.Container>
+          <ImgContainer.SubImg key={value.id} src= { value.imgPath||'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'}/> 
+          <Blur>+{data?.attachments.length-5}</Blur> 
+         
+        </Blur.Container>      : 
+        <ImgContainer.SubImg key={value.id} src= { value.imgPath||'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'}/>
+     ) })}
         </ImgCoontainer>
         </ImgContainer>
       <Wrapper>

@@ -151,26 +151,61 @@ ImgContainer.Main=styled.img`
 width: 100%;
 max-width: 280px;
 max-height: 190px;
-
 border: 1px solid red;
 `
-ImgContainer.SubImg=styled.img`
-width: 100%;
-max-width: 580px;
-max-height: 400px;
 
-`
 const ImgCoontainer=styled.div`
 display: flex;
 gap: 20px 20px ;
 flex-wrap:wrap;
 display: grid;
 grid-template-columns: auto auto;
+
+`
+ImgContainer.SubImg=styled.img`
+width: 100%;
+position: relative;
+
+
+
 `
 const Hero=styled.div`
 
 `
+
+
+const Blur =styled.div`
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100%;
+background: rgba(0,0,0, 0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: white;
+font-size: 33px;
+
+`
+
+Blur.Container=styled.div`
+width: 100%;
+max-width: 280px;
+max-height: 190px;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: white;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+`
 export {
+  Blur ,
   Hero,
   ImgCoontainer ,
   Container,
