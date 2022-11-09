@@ -10,7 +10,10 @@ import {
   Content,
   Description,
   Details,
+  Hero,
   Icons,
+  ImgContainer,
+  ImgCoontainer,
   Section,
   User,
   Wrapper,
@@ -34,9 +37,19 @@ export const HouseItem = () => {
         window.scrollTo(0, 0);
       });
   }, [params?.id]);
+  console.log(data?.attachments,'ruqi');
 
   return (
-    <React.Fragment>
+    <Hero>
+          <ImgContainer>
+<div>          <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/></div>
+        <ImgCoontainer>
+        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
+        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
+        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
+        <ImgContainer.SubImg  src= 'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'/>
+        </ImgCoontainer>
+        </ImgContainer>
       <Wrapper>
         <Container flex={3}>
           <Section>
@@ -214,7 +227,7 @@ export const HouseItem = () => {
       </Wrapper>
       <YandexMaps />
       <Recent />
-    </React.Fragment>
+    </Hero>
   );
 };
 

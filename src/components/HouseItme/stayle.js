@@ -134,8 +134,45 @@ User.Img = styled.img`
   border-radius: 50%;
   margin-right: 10px;
 `;
+const  ImgContainer = styled.div`
+display: flex;
+padding: var(--padding);
+ width: 100%;
+ max-width:1440px;
+ margin: auto;
+ margin-bottom: 24px;
+ margin-top: 24px;
+ gap: 0px 20px;
+display: flex;
+display: grid;
+grid-template-columns: 5fr 5fr;
+`
+ImgContainer.Main=styled.img`
+width: 100%;
+max-width: 280px;
+max-height: 190px;
 
+border: 1px solid red;
+`
+ImgContainer.SubImg=styled.img`
+width: 100%;
+max-width: 580px;
+max-height: 400px;
+
+`
+const ImgCoontainer=styled.div`
+display: flex;
+gap: 20px 20px ;
+flex-wrap:wrap;
+display: grid;
+grid-template-columns: auto auto;
+`
+const Hero=styled.div`
+
+`
 export {
+  Hero,
+  ImgCoontainer ,
   Container,
   Wrapper,
   Content,
@@ -144,4 +181,5 @@ export {
   Details,
   Description,
   User,
+  ImgContainer, 
 };
