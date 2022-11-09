@@ -1,4 +1,4 @@
-import { HouseItme } from '../../components/HouseItme/index.jsx';
+import HouseItem from "../../components/HouseItme";
 
-export const HouseItmePage = () => <HouseItme/>;
+export const HouseItmePage = () => <HouseItem/>;
 export default HouseItmePage;
