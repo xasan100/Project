@@ -199,18 +199,15 @@
 // }
 // export default AddHouse
 
-
 import React, { useEffect } from "react";
 import { Wrapper, MenuWrapper, Section, SelectAnt, IconDelete } from "./stayle";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Input } from "../Generic";
 import { Checkbox } from "antd";
-
 import { useFormik } from "formik";
 import TextArea from "antd/lib/input/TextArea";
 import useRequest from "../../hooks/requst";
-
 export const AddNewHouse = () => {
   const [imgs, setImgs] = useState([]);
   const [initial, setInitail] = useState({
@@ -218,6 +215,7 @@ export const AddNewHouse = () => {
     homeAmenitiesDto: {},
     componentsDto: {},
     status: true,
+
     locations: {
       latitude: 0,
       longitude: 0,
@@ -248,6 +246,7 @@ export const AddNewHouse = () => {
 
   const formik = useFormik({
     initialValues: initial,
+    // initialValues: {},
     enableReinitialize: true,
 
     onSubmit: (values) => {
@@ -258,7 +257,7 @@ export const AddNewHouse = () => {
         body: {
           ...values,
           categoryId: 1,
-          name: "",
+          name: "webbriain",
           attachments: imgs,
         },
       }).then((res) => {
@@ -268,13 +267,11 @@ export const AddNewHouse = () => {
   });
 
   const addImg = () => {
-    if (!(imgs.length >= 4) && img) {
       setImgs([
         ...imgs,
         { imgPath: img, id: `${img.length * Math.random()}${img}$` },
       ]);
       setImg("");
-    }
   };
   console.log(initial, "rrrrres");
 
@@ -406,7 +403,6 @@ export const AddNewHouse = () => {
             <Button
               type={"button"}
               onClick={addImg}
-              disabled={imgs.length >= 4}
             >
               Add Image URL
             </Button>
@@ -537,4 +533,3 @@ export const AddNewHouse = () => {
 };
 
 export default AddNewHouse;
-
