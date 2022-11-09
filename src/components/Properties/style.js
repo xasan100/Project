@@ -9,6 +9,7 @@ justify-content: space-around ;
 padding: var(--padding) ;
 gap: 50px 20px ;
  margin-top: 50px;
+ max-width: 1440px;
 
 `;
 
