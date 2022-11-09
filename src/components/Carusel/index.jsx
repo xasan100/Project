@@ -19,8 +19,8 @@ export const GenCarusel = () => {
     const onChange = (currentSlide) => {
     };
     const onMove = ({ target: { dataset: { name } } }) => {
-        if (name === 'right') slider.current.next();
-        if (name === 'left') slider.current.prev();
+        if (name =='right') slider.current.next();
+        if (name == 'left') slider.current.prev();
 
     }
     return (

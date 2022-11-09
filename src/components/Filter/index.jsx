@@ -40,7 +40,7 @@ export const Filter = ({ type }) => {
   }, []);
 
   useEffect(() => {
-    let [d] = data?.filter((ctg) => ctg.id === Number(query.get('category_id')))
+    let [d] = data?.filter((ctg) => ctg.id == Number(query.get('category_id')))
     d?.name && setValue(d?.name);
     !query.get('category_id') && setValue('Select Category');
 

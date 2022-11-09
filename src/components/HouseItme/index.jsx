@@ -45,7 +45,7 @@ console.log(data,'fdsdsf');
 <div>     <ImgContainer.SubImg  src= { data?.attachments && data?.attachments[0]?.imgPath ||'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'}  /></div>
         <ImgCoontainer>
         {data?.attachments&&data?.attachments.slice(1,5).map((value,index)=>{
-          return (  data?.attachments.length>5 && index===3 ?
+          return (  data?.attachments.length>5 && index==3 ?
         <Blur.Container>
           <ImgContainer.SubImg key={value.id} src= { value.imgPath||'https://www.mcoci.com/wp-content/uploads/2017/08/11.jpg'}/> 
           <Blur>+{data?.attachments.length-5}</Blur> 

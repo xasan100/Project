@@ -96,7 +96,6 @@ import { useQuery } from "react-query";
 import { message } from "antd";
 import useRequest from "../../hooks/requst";
 export const MyProfile = () => {
-  // const [data, setData] = useState([]);
   const { search } = useLocation();
   const navigate = useNavigate();
   const request = useRequest();

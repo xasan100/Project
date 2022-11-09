@@ -21,13 +21,10 @@ export const SiginUp = () => {
     const info = () => {
         message.info("Email Addres Message Yo Click");
     };
-    const warning = () => {
-        message.info("Error 401");
-    };
+  
     const onSubmit = async () => {
 
-        try {
-            let res = await request({
+            request({
                 url: `/public/auth/register`,
                 method: "POST",
                 body,
@@ -39,8 +36,7 @@ export const SiginUp = () => {
                 }
                 info();
             });
-        } catch (error) {
-        }
+     
     };
     return (
 
@@ -49,10 +45,12 @@ export const SiginUp = () => {
                 <Container>
                     <Content>
                         <div className="subTitle">Sigin Up</div>
-                        <Input onChange={onChange} placeholder="First name" type="text" />
-                        <Input onChange={onChange} placeholder="Last name " type="text" />
                         <Input onChange={onChange} placeholder="email" type="email" />
+                        <Input onChange={onChange} placeholder="firstname" type="text" />
+                        <Input onChange={onChange} placeholder="lastname" type="text" />
                         <Input onChange={onChange} placeholder="password" type="password" />
+
+
                         <Button width="%" onClick={onSubmit}>
                             Login
                         </Button>
